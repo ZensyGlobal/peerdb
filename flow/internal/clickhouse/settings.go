@@ -27,7 +27,7 @@ const (
 var CHSettingMinVersions = map[CHSetting]chproto.Version{
 	SettingJsonTypeEscapeDotsInKeys:    {Major: 25, Minor: 8, Patch: 0},
 	SettingTypeJsonSkipDuplicatedPaths: {Major: 24, Minor: 8, Patch: 0},
-	SettingMaxTableSizeToDrop:          {Major: 23, Minor: 12, Patch: 0},
+	SettingMaxTableSizeToDrop:          {Major: 99, Minor: 0, Patch: 0}, // Zensy: Altinity 24.8.x no soporta este setting a nivel tabla; nunca emitirlo
 }
 
 type CHSetting string
