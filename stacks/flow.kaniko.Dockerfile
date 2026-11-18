@@ -1,8 +1,8 @@
 FROM golang:1.26-alpine AS builder
 ARG DEBUG_BUILD
 ENV DEBUG_BUILD=${DEBUG_BUILD}
-RUN apk add --no-cache gcc geos-dev musl-dev git
-RUN go install github.com/bufbuild/buf/cmd/buf@v1.47.2
+RUN apk add --no-cache gcc geos-dev musl-dev git curl
+RUN curl -fsSL "https://github.com/bufbuild/buf/releases/download/v1.47.2/buf-Linux-aarch64" -o /usr/local/bin/buf && chmod +x /usr/local/bin/buf
 WORKDIR /root
 COPY . .
 RUN rm -f go.work*
